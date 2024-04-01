@@ -1,7 +1,12 @@
+import remarkGfm from "remark-gfm";
 import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(tsx)", "./components/**/*.stories.@(tsx)"],
+  stories: [
+    "../src/**/*.stories.@(tsx)",
+    "./components/**/*.stories.@(tsx)",
+    "../src/**/*.mdx"
+  ],
   staticDirs: ["./assets"],
   addons: [
     "@storybook/addon-links",
@@ -31,7 +36,19 @@ const config: StorybookConfig = {
     },
     "@storybook/addon-a11y",
     "@storybook/preview-api",
-    "storybook-dark-mode"
+    "storybook-dark-mode",
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        configureJSX: true,
+
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm]
+          }
+        }
+      }
+    }
   ],
   framework: {
     name: "@storybook/react-webpack5",

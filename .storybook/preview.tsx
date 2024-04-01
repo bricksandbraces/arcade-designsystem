@@ -17,6 +17,40 @@ const preview: Preview = {
     backgrounds: {
       disabled: true
     },
+    options: {
+      // this is a custom sort function that will sort stories by category, then by component then by story
+      storySort: (a, b) => {
+        const aSplit = a.title.split("/");
+        const aCategory = aSplit[0];
+        const aComponent = aSplit[1];
+        const aStory = a.name;
+        const aIsDoc = a.type === "docs";
+
+        const bSplit = b.title.split("/");
+        const bCategory = bSplit[0];
+        const bComponent = bSplit[1];
+        const bStory = b.name;
+        const bIsDoc = b.type === "docs";
+
+        // sort docs before stories
+        if (aIsDoc && !bIsDoc) {
+          return -10000000000;
+        }
+
+        if (!aIsDoc && bIsDoc) {
+          return 10000000000;
+        }
+
+        // sort locale by category, then by component then by story
+        if (aCategory === bCategory) {
+          if (aComponent === bComponent) {
+            return aStory.localeCompare(bStory);
+          }
+          return aComponent.localeCompare(bComponent);
+        }
+        return aCategory.localeCompare(bCategory);
+      }
+    },
     darkMode: {
       // Override the default dark theme
       dark: {

@@ -1,0 +1,29 @@
+import { Meta, Controls, Canvas, Stories } from "@storybook/blocks";
+import AccordionMeta from "./Accordion.stories";
+import * as AccordionStories from "./Accordion.stories";
+
+<Meta title="Miscellaneous/Accordion/Docs" of={AccordionMeta} />
+
+# Accordion
+
+The Accordion component is a UI element that expands to reveal hidden content when clicked on. It's useful for hiding and showing large amounts of content within a limited space.
+
+## Usage
+
+To use the Accordion component, import it from its module and include it in your JSX:
+
+```jsx
+import { Accordion } from "@openbricksandbraces/designsystem";
+
+<Accordion title="Section 1">This is the content of section 1.</Accordion>;
+```
+
+## Some Story
+
+Some story content
+
+<Canvas of={AccordionStories.Controlled} />
+
+## Default Controls
+
+<Controls />
