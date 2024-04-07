@@ -66,44 +66,38 @@ export const CodeSnippet = React.forwardRef(function CodeSnippet(
     <div
       className={cx(
         `${prefix}--codesnippet-container ${prefix}--codesnippet-${type}`,
-        { [`${prefix}--codesnippet-light`]: light },
         className
       )}
       {...rest}
       ref={ref}
     >
-      <div className={`${prefix}--codesnippet-button__container`}>
-        {type === "multi" && (
-          <Button
-            size="small"
-            icon={expanded ? <IconChevronUp /> : <IconChevronDown />}
-            iconPosition="right"
-            kind="ghost"
-            onClick={() => {
-              setExpanded(!expanded);
-            }}
-          >
-            {expanded ? showLessLabel : showMoreLabel}
-          </Button>
-        )}
-        <CopyButton
-          valueToCopy={code}
-          tooltipLabel={tooltipLabel}
-          onClick={() => {}}
-          tooltipLabelCopied={tooltipLabelCopied}
-          className={cx(`${prefix}--codesnippet-button`)}
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+      <pre className={`${prefix}--codesnippet-pre`} tabIndex={0}>
+        <code className={cx(`${prefix}--codesnippet-code`)}>{code}</code>
+      </pre>
+      {type === "multi" && (
+        <Button
+          className={cx(`${prefix}--codesnippet-showmorebutton`)}
           size="small"
-        />
-      </div>
-      <div
-        className={cx(`${prefix}--codesnippet-innercontainer`, {
-          [`${prefix}--codesnippet-innercontainer__expanded`]: expanded
-        })}
-      >
-        <pre className={`${prefix}--codesnippet-pre`}>
-          <code className={cx(`${prefix}--codesnippet-code`)}>{code}</code>
-        </pre>
-      </div>
+          icon={expanded ? <IconChevronUp /> : <IconChevronDown />}
+          iconPosition="right"
+          kind="ghost"
+          onClick={() => {
+            setExpanded(!expanded);
+          }}
+        >
+          {expanded ? showLessLabel : showMoreLabel}
+        </Button>
+      )}
+      <div className={cx(`${prefix}--codesnippet-singlegradient`)} />
+      <CopyButton
+        className={cx(`${prefix}--codesnippet-copybutton`)}
+        valueToCopy={code}
+        tooltipLabel={tooltipLabel}
+        onClick={() => {}}
+        tooltipLabelCopied={tooltipLabelCopied}
+        size="small"
+      />
     </div>
   );
 });

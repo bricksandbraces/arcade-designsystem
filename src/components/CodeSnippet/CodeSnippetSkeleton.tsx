@@ -29,7 +29,16 @@ export const CodeSnippetSkeleton = function CodeSnippetSkeleton({
         className
       )}
     >
-      <div style={{ width: "75%" }}>
+      <div
+        style={{
+          width: "75%",
+          padding: "8px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "8px",
+          justifyContent: "center"
+        }}
+      >
         <SkeletonText style={{ width: "100%" }} />
         {type === "multi" && (
           <>
@@ -39,7 +48,6 @@ export const CodeSnippetSkeleton = function CodeSnippetSkeleton({
           </>
         )}
       </div>
-      <div className={`${prefix}--codesnippet-button__container`} />
     </SkeletonContainer>
   );
 };
