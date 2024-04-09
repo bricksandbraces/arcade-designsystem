@@ -7,7 +7,7 @@ export default {
   component: CodeSnippet,
   decorators: [
     (Story: any) => (
-      <div style={{ padding: "32px", maxWidth: "500px" }}>
+      <div style={{ padding: "32px", maxWidth: "40rem" }}>
         <Story />
       </div>
     )

@@ -4,7 +4,7 @@
       display: flex;
       position: relative;
       align-items: center;
-      max-width: min(calc(var(--size-container-08) * 3) 100vw);
+      max-width: min(calc(var(--size-container-08) * 3), 100%);
       min-height: var(--size-container-03);
       max-height: var(--size-container-03);
       border: var(--size-border) var(--style-border) var(--color-border);
@@ -41,7 +41,7 @@
       @mixin code;
     }
 
-    &-singlegradient {
+    &-rightgradient {
       position: absolute;
       right: 36px;
       width: 32px;
@@ -62,7 +62,10 @@
     &-multi {
       &.$(prefix)--codesnippet-container {
         align-items: flex-start;
-        min-height: var(--size-container-03);
+        width: 40rem;
+        min-width: calc(var(--size-container-03) * 2);
+        max-width: min(40rem, 100%);
+        min-height: calc(var(--size-container-03) * 3);
         max-height: var(--size-container-08);
         overflow-y: hidden;
 
@@ -77,10 +80,16 @@
       }
 
       & .$(prefix)--codesnippet-copybutton {
-        position: sticky;
         top: 12px;
         right: 12px;
         border-radius: 8px;
+      }
+
+      & .$(prefix)--codesnippet-rightgradient {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 132px;
       }
 
       & .$(prefix)--codesnippet-pre {

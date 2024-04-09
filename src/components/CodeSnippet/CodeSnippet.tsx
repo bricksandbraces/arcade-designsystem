@@ -1,6 +1,6 @@
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import cx from "classnames";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { prefix } from "../../settings";
 import { Button } from "../Button/Button";
 import { CopyButton } from "../CopyButton/CopyButton";
@@ -62,6 +62,9 @@ export const CodeSnippet = React.forwardRef(function CodeSnippet(
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
   const [expanded, setExpanded] = useState(false);
+
+  const copyButtonRef = useRef<HTMLButtonElement>(null);
+
   return (
     <div
       className={cx(
@@ -74,19 +77,29 @@ export const CodeSnippet = React.forwardRef(function CodeSnippet(
       {...rest}
       ref={ref}
     >
-      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
-      <pre className={`${prefix}--codesnippet-pre`} tabIndex={0}>
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex, jsx-a11y/no-noninteractive-element-interactions */}
+      <pre
+        className={`${prefix}--codesnippet-pre`}
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (
+            (event.ctrlKey || event.metaKey) &&
+            event.key.toUpperCase() === "C"
+          ) {
+            copyButtonRef.current?.click();
+          }
+        }}
+      >
         <code className={cx(`${prefix}--codesnippet-code`)}>{code}</code>
       </pre>
 
-      {type !== "multi" && (
-        <div className={cx(`${prefix}--codesnippet-singlegradient`)} />
-      )}
+      <div className={cx(`${prefix}--codesnippet-rightgradient`)} />
       <CopyButton
+        ref={copyButtonRef}
         className={cx(`${prefix}--codesnippet-copybutton`)}
         valueToCopy={code}
         tooltipLabel={tooltipLabel}
-        onClick={() => {}}
         tooltipLabelCopied={tooltipLabelCopied}
         size="small"
       />
