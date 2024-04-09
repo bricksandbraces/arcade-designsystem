@@ -66,6 +66,9 @@ export const CodeSnippet = React.forwardRef(function CodeSnippet(
     <div
       className={cx(
         `${prefix}--codesnippet-container ${prefix}--codesnippet-${type}`,
+        {
+          [`${prefix}--codesnippet-container-expanded`]: expanded
+        },
         className
       )}
       {...rest}
@@ -75,21 +78,10 @@ export const CodeSnippet = React.forwardRef(function CodeSnippet(
       <pre className={`${prefix}--codesnippet-pre`} tabIndex={0}>
         <code className={cx(`${prefix}--codesnippet-code`)}>{code}</code>
       </pre>
-      {type === "multi" && (
-        <Button
-          className={cx(`${prefix}--codesnippet-showmorebutton`)}
-          size="small"
-          icon={expanded ? <IconChevronUp /> : <IconChevronDown />}
-          iconPosition="right"
-          kind="ghost"
-          onClick={() => {
-            setExpanded(!expanded);
-          }}
-        >
-          {expanded ? showLessLabel : showMoreLabel}
-        </Button>
+
+      {type !== "multi" && (
+        <div className={cx(`${prefix}--codesnippet-singlegradient`)} />
       )}
-      <div className={cx(`${prefix}--codesnippet-singlegradient`)} />
       <CopyButton
         className={cx(`${prefix}--codesnippet-copybutton`)}
         valueToCopy={code}
@@ -98,6 +90,21 @@ export const CodeSnippet = React.forwardRef(function CodeSnippet(
         tooltipLabelCopied={tooltipLabelCopied}
         size="small"
       />
+      {type === "multi" && (
+        <div className={cx(`${prefix}--codesnippet-showmore`)}>
+          <Button
+            size="small"
+            icon={expanded ? <IconChevronUp /> : <IconChevronDown />}
+            iconPosition="right"
+            kind="ghost"
+            onClick={() => {
+              setExpanded(!expanded);
+            }}
+          >
+            {expanded ? showLessLabel : showMoreLabel}
+          </Button>
+        </div>
+      )}
     </div>
   );
 });
