@@ -141,3 +141,23 @@
     local("dmmono-medium"),
     url("assets/fonts/DMMono-Medium.woff") format("woff");
 }
+
+/* Mono Regular 400 */
+@font-face {
+  font-family: "Red Hat Mono";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("redhatmono-regular"),
+    url("assets/fonts/RedHatMono.woff2") format("woff2");
+}
+
+/* Mono Regular 400 Italic  */
+@font-face {
+  font-family: "Red Hat Mono";
+  font-style: italic;
+  font-weight: 400;
+  src:
+    local("redhatmono-regularitalic"),
+    url("assets/fonts/RedHatMono-Italic.woff2") format("woff2");
+}
