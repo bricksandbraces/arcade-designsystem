@@ -91,7 +91,24 @@ export const CodeSnippet = React.forwardRef(function CodeSnippet(
           }
         }}
       >
-        <code className={cx(`${prefix}--codesnippet-code`)}>{code}</code>
+        {type === "multi" && (
+          <div className={cx(`${prefix}--codesnippet-multilinecode`)}>
+            {code.split("\n").map((line, index) => (
+              <div key={index} className={cx(`${prefix}--codesnippet-line`)}>
+                <span className={cx(`${prefix}--codesnippet-linenum`)}>
+                  {index + 1}
+                </span>
+                <code className={cx(`${prefix}--codesnippet-code`)}>
+                  {line}
+                </code>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {type === "single" && (
+          <code className={cx(`${prefix}--codesnippet-code`)}>{code}</code>
+        )}
       </pre>
 
       <div className={cx(`${prefix}--codesnippet-rightgradient`)} />
