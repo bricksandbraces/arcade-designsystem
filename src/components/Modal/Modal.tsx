@@ -1,7 +1,7 @@
 import { IconX } from "@tabler/icons-react";
 import cx from "classnames";
 import React, { useEffect, useRef, useState } from "react";
-import ReactDOM from "react-dom";
+import { createPortal } from "react-dom";
 import FocusLock from "react-focus-lock";
 import { withoutPropagation } from "../../helpers/eventUtilities";
 import { setRef } from "../../helpers/refUtilities";
@@ -113,7 +113,7 @@ export const Modal = React.forwardRef(function Modal(
   return (
     <>
       {mounted &&
-        ReactDOM.createPortal(
+        createPortal(
           <div
             id={id}
             aria-hidden={!open}

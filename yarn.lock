@@ -2890,7 +2890,7 @@ __metadata:
   resolution: "@openbricksandbraces/designsystem@workspace:."
   dependencies:
     "@babel/core": "npm:^7.24.0"
-    "@openbricksandbraces/designtokens": "npm:^0.0.9"
+    "@openbricksandbraces/designtokens": "npm:^0.1.0"
     "@openbricksandbraces/eloguent": "npm:^0.1.2"
     "@storybook/addon-a11y": "npm:^7.6.17"
     "@storybook/addon-actions": "npm:^7.6.17"
@@ -2970,14 +2970,12 @@ __metadata:
     postcss-utilities: "npm:^0.8.4"
     postcss-viewport-height-correction: "npm:^1.1.1"
     prettier: "npm:^3.2.5"
-    prop-types: "npm:^15.8.1"
     rc-slider: "npm:^10.5.0"
     react: "npm:^18.2.0"
     react-day-picker: "npm:^8.10.0"
     react-dom: "npm:^18.2.0"
     react-focus-lock: "npm:^2.11.2"
     react-merge-refs: "npm:^2.1.1"
-    react-ticker: "npm:^1.3.2"
     react-use: "npm:^17.5.0"
     remark-gfm: "npm:^4.0.0"
     rimraf: "npm:^5.0.5"
@@ -2996,15 +2994,15 @@ __metadata:
     webpack: "npm:^5.90.3"
     webpack-bundle-analyzer: "npm:^4.10.1"
   peerDependencies:
-    react: ^17.X
-    react-dom: ^17.X
+    react: ^18.X
+    react-dom: ^18.X
   languageName: unknown
   linkType: soft
 
-"@openbricksandbraces/designtokens@npm:^0.0.9":
-  version: 0.0.9
-  resolution: "@openbricksandbraces/designtokens@npm:0.0.9::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40openbricksandbraces%2Fdesigntokens%2F-%2Fdesigntokens-0.0.9.tgz"
-  checksum: 10/55aac47f20ebde26414cc39ca785d7d7adac2dc8c102db78881a9682812970e16dcbf158a6adc34e186d9f089b88288a095b969e231e82e5763062fc385423a2
+"@openbricksandbraces/designtokens@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@openbricksandbraces/designtokens@npm:0.1.0::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2F%40openbricksandbraces%2Fdesigntokens%2F-%2Fdesigntokens-0.1.0.tgz"
+  checksum: 10/2c930eb2274e24720f764b7ded7ca65d04d20533b6f85fc72f85988afca6102d1cd04a01481b6519f1bd7e6a573043717d3013acc9625c2cff23c2a56c93a93f
   languageName: node
   linkType: hard
 
@@ -16048,17 +16046,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-ticker@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "react-ticker@npm:1.3.2::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2Freact-ticker%2F-%2Freact-ticker-1.3.2.tgz"
-  peerDependencies:
-    prop-types: ^15.8.0
-    react: ^17.0.2
-    react-dom: ^17.0.2
-  checksum: 10/6d65db2aef55d01acd83a0f017467d47999aaf78ef34b13d1224d702e0bbb35f288f220b1786a5a532b9c8f40fde534f2f4380729f574d406a28c1d4004297b4
-  languageName: node
-  linkType: hard
-
 "react-universal-interface@npm:^0.6.2":
   version: 0.6.2
   resolution: "react-universal-interface@npm:0.6.2::__archiveUrl=https%3A%2F%2Fregistry.npmjs.org%2Freact-universal-interface%2F-%2Freact-universal-interface-0.6.2.tgz"
@@ -18308,11 +18295,11 @@ __metadata:
 
 "typescript@patch:typescript@npm%3A^5.4.2#optional!builtin<compat/typescript>":
   version: 5.4.2
-  resolution: "typescript@patch:typescript@npm%3A5.4.2%3A%3A__archiveUrl=https%253A%252F%252Fregistry.npmjs.org%252Ftypescript%252F-%252Ftypescript-5.4.2.tgz#optional!builtin<compat/typescript>::version=5.4.2&hash=d69c25"
+  resolution: "typescript@patch:typescript@npm%3A5.4.2%3A%3A__archiveUrl=https%253A%252F%252Fregistry.npmjs.org%252Ftypescript%252F-%252Ftypescript-5.4.2.tgz#optional!builtin<compat/typescript>::version=5.4.2&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/ef4fc2994cc0219dc9ada94c92106ba8d44cbfd7a0328ed6f8d730311caf66e114cdfa07fbc6f369bfc0fc182d9493851b3bf1644c06fc5818690b19ee960d72
+  checksum: 10/f5f9a4133c2670761f0166eae5b3bafbc4a3fc24f0f42a93c9c893d9e9d6e66ea066969c5e7483fa66b4ae0e99125592553f3b92fd3599484de8be13b0615176
   languageName: node
   linkType: hard
 
