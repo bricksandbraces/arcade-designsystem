@@ -116,26 +116,66 @@ output += `export const defaultTheme = {\n`;
 figmaTheme.forEach((valueSet) => {
   output += `  ${valueSet.name}: {\n`;
   if (valueSet.name === "Colors") {
+    // 🎨 COLORS
     const values = valueSet.values as any as ColorValues[];
 
     values.forEach((colorTheme) => {
       output += `    ${colorTheme.mode.name}: {\n`;
       colorTheme.color.forEach((color) => {
-        output += `      "${color.name.replace(/\//g, "-")}": colors["${color.var.split("/").slice(1).join("-")}"],\n`;
+        output += `      "${color.name.replace(/\//g, "-")}": colors["${color.var.split("/").slice(1).join("-").replaceAll("%", "\\\\%")}"],\n`;
       });
       output += `    },\n\n`;
     });
   } else if (valueSet.name === "Sizes") {
+    // 📐 SIZES
     const values = valueSet.values as any as SizesValues[];
 
-    values[0].number.forEach((size) => {
-      output += `    "${size.name}": "${size.value}",\n`;
+    Object.entries(
+      values[0].number.reduce(
+        (prev, curr, i, arr) => {
+          const split = curr.name.split("/");
+          const key = split[0];
+          const value = split[1];
+          if (!prev[key]) {
+            prev[key] = [];
+          }
+          prev[key].push({ name: value, value: curr.value });
+          return prev;
+        },
+        {} as Record<
+          /* "radius" | "spacing" | "container" */ string,
+          { name: string; value: string }[]
+        >
+      )
+    ).forEach(([key, value]) => {
+      output += `    ${key}: {\n`;
+      value.forEach((size) => {
+        output += `      "${size.name}": "${size.value}",\n`;
+      });
+      output += `    },\n\n`;
     });
     // output += `    ${sizeTheme.mode}: {\n`;
     // sizeTheme.number.forEach((size) => {
     // });
     // output += `    },\n\n`;
+  } else if (valueSet.name === "Breakpoint") {
+    // 🖥 BREAKPOINTS
+    const values = valueSet.values as any as BreakpointValues[];
+
+    values.forEach((breakpoint) => {
+      const breakpointSplit = breakpoint.mode.name.split(" ");
+      const breakpointName = breakpointSplit[0].toLowerCase();
+      const breakpointMinWidth = breakpointSplit[1]
+        .replaceAll("px", "")
+        .replaceAll("(", "")
+        .replaceAll(")", "");
+      console.log(breakpointName, breakpointMinWidth);
+      output += `    ${breakpointName}: ${breakpointMinWidth},\n`;
+    });
+  } else if (valueSet.name === "Primitives") {
+    output += `    // Primitives are imported from the above designtokens package\n`;
   }
+
   output += `  },\n`;
 });
 
