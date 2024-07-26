@@ -1,12 +1,14 @@
 {
   "name": "@bricksandbraces/arcade-tokens",
-  "version": "0.1.5",
+  "version": "0.1.8",
   "description": "Awesome design tokens for the Bricks & Braces brand.",
   "repository": {
     "type": "git",
     "url": "https://github.com/bricksandbraces/designsystem.git",
     "directory": "packages/arcade-tokens"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "tokens:format:fix": "DEBUG=eslint:cli-engine eslint --fix --cache --cache-strategy content . && prettier --write . && rimraf node_modules",
     "tokens:format:check": "DEBUG=eslint:cli-engine eslint --cache --cache-strategy content . && prettier --check .",
@@ -22,7 +24,6 @@
   "engines": {
     "node": ">=20.X"
   },
-  "main": "index.js",
   "files": [
     "dist"
   ],
