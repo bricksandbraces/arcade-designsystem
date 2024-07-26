@@ -1,0 +1,33 @@
+import cx from "classnames";
+import React from "react";
+import { prefix } from "@bricksandbraces/arcade-tokens/settings";
+import { SkeletonAnimatedContainer } from "../Skeleton/SkeletonAnimatedContainer";
+
+export type ButtonSkeletonProps = {
+  /**
+   * ButtonSkeleton ClassName
+   */
+  className?: string;
+
+  /**
+   * ButtonSkeleton Size
+   */
+  size?: "large" | "default" | "small";
+
+  /**
+   * ButtonSkeleton Light
+   */
+  light?: boolean;
+};
+
+export const ButtonSkeleton = function ButtonSkeleton({
+  size = "default",
+  className
+}: ButtonSkeletonProps) {
+  return (
+    <SkeletonAnimatedContainer
+      style={{ width: "8rem" }}
+      className={cx(`${prefix}--button ${prefix}--button-${size}`, className)}
+    />
+  );
+};
