@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import cx from "classnames";
 import React from "react";
 import { SkeletonContainer, SkeletonText } from "../..";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 export type TextAreaSkeletonProps = {
   /**

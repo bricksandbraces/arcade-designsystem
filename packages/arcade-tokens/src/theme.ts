@@ -1,38 +1,114 @@
-// import border from "@openbricksandbraces/designtokens/dist/json/border.json";
-// import breakpoints from "@openbricksandbraces/designtokens/dist/json/breakpoints.json";
-// import modals from "@openbricksandbraces/designtokens/dist/json/modals.json";
-// import primitives from "../dist/primitives";
-// import sizes from "../dist/sizes";
-// import colors from "../dist/colors";
+export type PrimitivesValues = {
+  mode: {
+    name: "Value";
+    id: string;
+  };
+  number: any[];
+  color: {
+    /** @example "color/blue/10" */
+    name: string;
+    /** @example "8px" */
+    color: string;
+    var: never;
+    rootAlias: never;
+  }[];
+}[];
 
-import borders from "./generated/borders";
-import breakpoints from "./generated/breakpoints";
-import colors from "./generated/colors";
-import modals from "./generated/modals";
-import primitives from "./generated/primitives";
-import sizes from "./generated/sizes";
-
-export type ThemeToken = string;
-export type CssPropertyValue = string;
-export type Theme = Record<ThemeToken, CssPropertyValue>;
-export type Themes = {
-  common?: Theme;
-  light?: Theme;
-  dark?: Theme;
+export type ModalValues = {
+  mode: {
+    /** @example 'sm' */
+    name: string;
+    id: string;
+  };
+  color: never;
+  number: {
+    /**  @example 'Modal_MaxWidth' */
+    name: string;
+    /**  @example '375px' */
+    value: string;
+    var: never;
+    rootAlias: never;
+  }[];
 };
 
-export const defaultThemes: Themes = {
-  common: {
-    ...primitives,
-    ...sizes,
-    ...breakpoints,
-    ...modals,
-    ...borders
-  },
-  light: {
-    ...colors.light
-  },
-  dark: {
-    ...colors.dark
-  }
+export type ColorValues = {
+  mode: {
+    name: "Light" | "Dark";
+    id: string;
+  };
+  color: {
+    /** @example "color/background" */
+    name: string;
+    /** @example "rgb(1,1,1)"" */
+    color: string;
+    /** @example "color/neutral/white" */
+    var: string;
+    /** @example "color/neutral/white" */
+    rootAlias: string;
+  }[];
 };
+
+export type SizesValues = {
+  mode: {
+    name: "Mode 1";
+    id: string;
+  };
+  color: never;
+  number: {
+    /** @example "container/4xs" */
+    name: string;
+    /** @example "8px" */
+    value: string;
+    var: never;
+    rootAlias: never;
+  }[];
+};
+
+export type BreakpointValues = {
+  mode: {
+    name: "Value";
+    id: string;
+  };
+  values: {
+    /** sm (375px) or md (896px) or ... */
+    mode: string;
+    color: never;
+    number: {
+      /** @example "Grid_Columns" */
+      name: string;
+      /** @example "4px" */
+      value: string;
+      var: never;
+      rootAlias: never;
+    }[];
+  }[];
+};
+
+export type BorderValues = {
+  mode: {
+    name: "Value";
+    id: string;
+  };
+  color: never;
+  number: {
+    /** @example "divider" */
+    name: string;
+    /** @example "8px" */
+    value: string;
+    var: never;
+    rootAlias: never;
+  }[];
+};
+
+export type FigmaTheme = {
+  /**
+   * Primitives, Colors, Sizes, Breakpoint, Border
+   */
+  name: string;
+  values:
+    | PrimitivesValues
+    | ColorValues
+    | SizesValues
+    | BreakpointValues
+    | BorderValues;
+}[];

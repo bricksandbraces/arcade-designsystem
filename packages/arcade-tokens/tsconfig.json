@@ -1,8 +1,12 @@
 {
+  "rootDir": "src",
   "extends": "../../tsconfig.json",
-  "include": ["./**/*.ts", "../../types/**/*.ts"],
+  "include": ["./**/*.ts"],
+  "exclude": ["dist", "tasks"],
   "compilerOptions": {
-    "noEmit": true,
-    "outDir": "."
+    "incremental": false,
+    "noEmit": false,
+    "rootDir": "src",
+    "outDir": "dist"
   }
 }

@@ -30,7 +30,7 @@
     "build-storybook": "storybook build"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.com"
+    "registry": "https://npm.pkg.github.com/"
   },
   "browserslist": "last 2 versions",
   "main": "./lib/cjs/src/index.js",

@@ -8,11 +8,15 @@
     "directory": "packages/arcade-tokens"
   },
   "scripts": {
-    "format:fix": "DEBUG=eslint:cli-engine eslint --fix --cache --cache-strategy content . && prettier --write . && stylelint \"**/*.?(p)css\" --fix --formatter verbose",
-    "format:check": "DEBUG=eslint:cli-engine eslint --cache --cache-strategy content . && prettier --check . && stylelint \"**/*.?(p)css\" --formatter verbose"
+    "tokens:format:fix": "DEBUG=eslint:cli-engine eslint --fix --cache --cache-strategy content . && prettier --write . && rimraf node_modules",
+    "tokens:format:check": "DEBUG=eslint:cli-engine eslint --cache --cache-strategy content . && prettier --check .",
+    "tokens:build": "yarn tokens:clean && tsc --build --verbose && echo 'Build complete!'",
+    "tokens:clean": "rimraf dist",
+    "tokens:generate-from-figma": "ts-node -P 'tsconfig.tasks.json' './tasks/generate-from-figma/generate-from-figma.ts' && yarn tokens:format:fix",
+    "tokens:run-update": "yarn tokens:generate-from-figma && yarn tokens:build && echo 'Update complete!'"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.com"
+    "registry": "https://npm.pkg.github.com/"
   },
   "browserslist": "last 2 versions",
   "engines": {

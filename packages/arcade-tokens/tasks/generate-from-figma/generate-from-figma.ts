@@ -7,13 +7,13 @@ import {
   ModalValues,
   PrimitivesValues,
   SizesValues
-} from "../../types/theme";
+} from "../../src/theme";
 
-const INPUT_PATH =
-  __dirname + "/../../packages/arcade-tokens/variables2css.json";
-const OUTPUT_PATH = __dirname + "/../../packages/arcade-tokens/src/generated/";
-const DISCLAIMER = `/** DO NOT MODIFY! This file has been auto-generated from task:generate-tokens.\nFor changing, consolidate /packages/arcade-tokens/variables2css.json and rerun the task. */\n\n`;
-const IMPORT_PRIMITIVES = `import primitives from "./primitives";\n\n`;
+const INPUT_PATH = __dirname + "/../../variables2css.json";
+const OUTPUT_PATH = __dirname + "/../../src/generated/";
+const DISCLAIMER =
+  "/** DO NOT MODIFY! This file has been auto-generated from task:generate-tokens.\nFor changing, consolidate /packages/arcade-tokens/variables2css.json and rerun the task. */\n\n";
+const IMPORT_PRIMITIVES = 'import primitives from "./primitives";\n\n';
 
 const input = fs.readFileSync(INPUT_PATH, "utf8");
 
@@ -36,7 +36,7 @@ function generatePrimitives(values: PrimitivesValues) {
       primitiveOutput += `  "${figmaVarToJSVar(color.name)}": "${color.color}",\n`;
     }
   });
-  primitiveOutput += `};\n`;
+  primitiveOutput += "};\n";
 
   fs.writeFileSync(OUTPUT_PATH + "primitives.ts", primitiveOutput);
 }
@@ -48,9 +48,9 @@ function generateColors(values: ColorValues[]) {
     colorTheme.color.forEach((color) => {
       colorOutput += `    "${color.name.replace(/\//g, "-")}": primitives["${figmaVarToJSVar(color.var)}"],\n`;
     });
-    colorOutput += `  },\n`;
+    colorOutput += "  },\n";
   });
-  colorOutput += `};\n`;
+  colorOutput += "};\n";
 
   fs.writeFileSync(OUTPUT_PATH + "colors.ts", colorOutput);
 }
@@ -62,7 +62,7 @@ function generateSizes(values: SizesValues[]) {
     sizeOutput += `    "${number.name.replaceAll("/", "-")}": "${number.value}",\n`;
   });
 
-  sizeOutput += `};\n`;
+  sizeOutput += "};\n";
 
   fs.writeFileSync(OUTPUT_PATH + "sizes.ts", sizeOutput);
 }
@@ -78,7 +78,7 @@ function generateBreakpoints(values: BreakpointValues[]) {
       .replaceAll(")", "");
     breakpointOutput += `  ${breakpointName}: "${breakpointMinWidth}",\n`;
   });
-  breakpointOutput += `};\n`;
+  breakpointOutput += "};\n";
 
   fs.writeFileSync(OUTPUT_PATH + "breakpoints.ts", breakpointOutput);
 }
@@ -88,7 +88,7 @@ function generateBorders(values: BorderValues[]) {
   values[0].number.forEach((border) => {
     borderOutput += `  "${border.name}": "${border.value}",\n`;
   });
-  borderOutput += `};\n`;
+  borderOutput += "};\n";
 
   fs.writeFileSync(OUTPUT_PATH + "borders.ts", borderOutput);
 }
@@ -107,17 +107,12 @@ function generateModals(values: ModalValues[]) {
     });
   });
 
-  modalOutput += `};\n`;
+  modalOutput += "};\n";
 
   fs.writeFileSync(OUTPUT_PATH + "modals.ts", modalOutput);
 }
 
-let output = DISCLAIMER + IMPORT_PRIMITIVES;
-
-output += `export const defaultTheme = {\n`;
-
 figmaTheme.forEach((valueSet) => {
-  output += `  ${valueSet.name}: {\n`;
   if (valueSet.name === "Colors") {
     // 🎨 COLORS
     const values = valueSet.values as any as ColorValues[];
@@ -149,10 +144,4 @@ figmaTheme.forEach((valueSet) => {
 
     generateBorders(values);
   }
-
-  output += `  },\n`;
 });
-
-output += `};\n`;
-
-fs.writeFileSync(OUTPUT_PATH + "theme.ts", output);
