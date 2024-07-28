@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconEye, IconEyeOff } from "@tabler/icons-react";
 import React, { useEffect, useState } from "react";
 import { useControlled } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { IconOnlyButton } from "../Button/IconOnlyButton";
 import { TextInput, TextInputProps } from "../TextInput/TextInput";
 

@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import cx from "classnames";
 import React, { useRef, useState } from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { Button } from "../Button/Button";
 import { CopyButton } from "../CopyButton/CopyButton";
 

@@ -1,3 +1,4 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import React from "react";
 import { mergeRefs } from "react-merge-refs";
@@ -6,7 +7,6 @@ import {
   useControlledInput,
   useControlledValue
 } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { BadgeColor } from "../Badge/Badge";
 import { Button } from "../Button/Button";
 import { SearchContainer } from "./SeachContainer";

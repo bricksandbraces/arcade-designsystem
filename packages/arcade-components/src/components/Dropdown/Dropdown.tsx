@@ -1,3 +1,4 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import {
   IconAlertCircle,
   IconAlertTriangle,
@@ -10,7 +11,6 @@ import { OutsideClickListener } from "../..";
 import { findNextItem } from "../../helpers/arrayUtilities";
 import { filterForKeys } from "../../helpers/keyboardUtilities";
 import { useControlled } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { Label } from "../Typography/Typography";
 
 export type DropdownItem = {

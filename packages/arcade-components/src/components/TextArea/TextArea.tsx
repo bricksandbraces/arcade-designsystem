@@ -1,9 +1,9 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconAlertCircle, IconAlertTriangle } from "@tabler/icons-react";
 import cx from "classnames";
 import React, { forwardRef, memo } from "react";
 import { mergeRefs } from "react-merge-refs";
 import { useControlledInput } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { TextInputProps } from "../TextInput/TextInput";
 import { Label } from "../Typography/Typography";
 

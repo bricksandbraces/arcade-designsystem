@@ -1,9 +1,9 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { assert } from "@openbricksandbraces/eloguent";
 import cx from "classnames";
 import React, { useEffect, useState } from "react";
 import { mapReactChildren } from "../../helpers/reactUtilities";
 import { useControlled } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { RadioButtonProps } from "./RadioButton";
 
 export type RadioButtonGroupProps = {

@@ -1,6 +1,5 @@
 import React from "react";
-import { Logo } from "../../../src/components/Logo/Logo";
-import { Body, Headline } from "../../../src/components/Typography/Typography";
+import { Logo, Body, Headline } from "@bricksandbraces/arcade-components";
 import packageJSON from "../../../package.json";
 
 const Intro = () => {

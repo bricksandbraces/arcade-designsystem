@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import React from "react";
 import { withoutPropagation } from "../../helpers/eventUtilities";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { Button } from "../Button/Button";
 
 export type ModalFooterProps = {

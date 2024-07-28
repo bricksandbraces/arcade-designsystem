@@ -1,5 +1,5 @@
-import { defaultThemes } from "@bricksandbraces/arcade-tokens/src/theme";
-import type { Theme } from "@bricksandbraces/arcade-tokens/src/theme";
+import { defaultThemes } from "@bricksandbraces/arcade-tokens";
+import type { Themes } from "@bricksandbraces/arcade-tokens";
 import React, { createContext, useContext } from "react";
 import { usePreferredColorScheme } from "../../../hooks/usePreferredColorScheme";
 
@@ -10,10 +10,10 @@ export type ThemeProviderProps = {
   children?: React.ReactNode;
 
   /**
-   * ThemeProvider Theme: Accepts the definitions for the light and dark system appearance.
+   * ThemeProvider Themes: Accepts the definitions for the light and dark system appearance.
    * Automatically prefixes the token definitions with --.
    */
-  theme?: Theme;
+  theme?: Themes;
 
   /**
    * ThemeProvider Style
@@ -26,7 +26,7 @@ export type ThemeProviderProps = {
   className?: string;
 };
 
-const ThemeContext = createContext<Theme>(defaultThemes);
+const ThemeContext = createContext<Themes>(defaultThemes);
 
 export const ThemeProvider = ({
   className,

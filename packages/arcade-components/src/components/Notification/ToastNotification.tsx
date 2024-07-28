@@ -1,3 +1,4 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import {
   IconAlertTriangle,
   IconCheck,
@@ -7,7 +8,6 @@ import {
 } from "@tabler/icons-react";
 import cx from "classnames";
 import React from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { IconOnlyButton } from "../Button/IconOnlyButton";
 import { Body, Headline } from "../Typography/Typography";
 

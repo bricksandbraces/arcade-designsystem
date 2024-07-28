@@ -1,5 +1,5 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import React, { ReactNode } from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 export type TableProps = {
   /**

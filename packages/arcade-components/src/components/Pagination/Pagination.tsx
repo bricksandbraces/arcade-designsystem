@@ -1,3 +1,4 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import {
   IconChevronLeft,
   IconChevronRight,
@@ -9,7 +10,6 @@ import React, { ReactHTML } from "react";
 import { Button } from "../..";
 import { generateVisiblePagesArray } from "../../helpers/paginationUtilities";
 import { useControlledValue } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { IconOnlyButton } from "../Button/IconOnlyButton";
 
 export type PaginationProps = {

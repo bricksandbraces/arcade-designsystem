@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconClock } from "@tabler/icons-react";
 import cx from "classnames";
 import React, { useEffect, useState } from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 /**
  * Determine whether the list item is a result item or a recents item.

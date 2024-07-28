@@ -1,9 +1,9 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconDotsVertical } from "@tabler/icons-react";
 import type { TippyProps } from "@tippyjs/react";
 import Tippy from "@tippyjs/react";
 import cx from "classnames";
 import React from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { IconOnlyButton } from "../Button/IconOnlyButton";
 
 export type OverflowMenuProps = {

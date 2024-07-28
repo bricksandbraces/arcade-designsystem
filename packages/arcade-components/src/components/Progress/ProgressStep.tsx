@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import React, { ReactNode } from "react";
 import { Tooltip } from "../..";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 export type ProgressStepProps = {
   /**

@@ -1,8 +1,8 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconAlertCircle, IconAlertTriangle } from "@tabler/icons-react";
 import cx from "classnames";
 import React from "react";
 import { useControlledValue } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { Label } from "../Typography/Typography";
 
 export type SelectOptionGroup = {

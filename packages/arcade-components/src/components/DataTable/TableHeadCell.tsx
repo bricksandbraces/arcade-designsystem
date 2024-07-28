@@ -1,3 +1,4 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import {
   IconArrowDown,
   IconArrowUp,
@@ -5,7 +6,6 @@ import {
 } from "@tabler/icons-react";
 import cx from "classnames";
 import React from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 export type TableHeadCellProps = {
   /**

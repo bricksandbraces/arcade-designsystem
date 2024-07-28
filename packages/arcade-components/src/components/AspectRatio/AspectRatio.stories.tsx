@@ -1,6 +1,6 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { AspectRatio } from "./AspectRatio";
 
 export default {

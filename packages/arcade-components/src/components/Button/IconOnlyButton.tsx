@@ -1,6 +1,6 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import React from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { Tooltip, TooltipProps } from "../Tooltip/Tooltip";
 import { Button, ButtonProps } from "./Button";
 

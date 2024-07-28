@@ -1,10 +1,12 @@
+import settings from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconChevronDown } from "@tabler/icons-react";
 import cx from "classnames";
 import React, { ReactNode, useEffect, useState } from "react";
 import { mapReactChildren } from "../../helpers/reactUtilities";
 import { useControlled } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { AccordionItemProps } from "./AccordionItem";
+
+const { prefix } = settings;
 
 export type AccordionProps = {
   /**

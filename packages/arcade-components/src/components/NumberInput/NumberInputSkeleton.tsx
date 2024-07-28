@@ -1,8 +1,8 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconMinus, IconPlus } from "@tabler/icons-react";
 import cx from "classnames";
 import React from "react";
 import { SkeletonAnimatedContainer } from "../..";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { IconOnlyButton } from "../Button/IconOnlyButton";
 import { IconOnlyButtonGroup } from "../Button/IconOnlyButtonGroup";
 import { SkeletonText } from "../Skeleton/SkeletonText";

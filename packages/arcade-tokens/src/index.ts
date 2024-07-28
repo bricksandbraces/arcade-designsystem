@@ -1,16 +1,11 @@
-// import border from "@openbricksandbraces/designtokens/dist/json/border.json";
-// import breakpoints from "@openbricksandbraces/designtokens/dist/json/breakpoints.json";
-// import modals from "@openbricksandbraces/designtokens/dist/json/modals.json";
-// import primitives from "../dist/primitives";
-// import sizes from "../dist/sizes";
-// import colors from "../dist/colors";
-
 import borders from "./generated/borders";
 import breakpoints from "./generated/breakpoints";
 import colors from "./generated/colors";
 import modals from "./generated/modals";
 import primitives from "./generated/primitives";
 import sizes from "./generated/sizes";
+import settings from "./settings";
+import "./theme";
 
 export type ThemeToken = string;
 export type CssPropertyValue = string;
@@ -39,4 +34,10 @@ export const defaultThemes: Themes = {
 
 export const theme = (mode: "light" | "dark" = "light"): Theme => {
   return { ...defaultThemes.common, ...defaultThemes[mode] };
+};
+
+export default {
+  theme,
+  defaultThemes,
+  settings
 };

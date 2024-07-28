@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import { chunk } from "lodash";
 import React, { useState } from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { TableProps } from "./Table";
 import { TableContainerProps } from "./TableContainer";
 import { TableHeadProps } from "./TableHead";

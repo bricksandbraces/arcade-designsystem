@@ -1,8 +1,8 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconAB } from "@tabler/icons-react";
 import cx from "classnames";
 import React from "react";
 import { Body, Headline } from "../..";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 export type EmptyStateProps = {
   /**

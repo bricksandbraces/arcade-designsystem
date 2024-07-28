@@ -1,8 +1,8 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import Tippy from "@tippyjs/react";
 import cx from "classnames";
 import React from "react";
 import { roundArrow } from "tippy.js";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 export type NavigationHeaderNavMenuProps = {
   /**

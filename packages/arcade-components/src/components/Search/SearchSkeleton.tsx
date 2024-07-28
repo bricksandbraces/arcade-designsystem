@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconSearch } from "@tabler/icons-react";
 import cx from "classnames";
 import React from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { SkeletonAnimatedContainer } from "../Skeleton/SkeletonAnimatedContainer";
 
 export type SearchSkeletonProps = {

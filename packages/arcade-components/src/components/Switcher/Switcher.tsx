@@ -1,8 +1,8 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import React from "react";
 import { mapReactChildren } from "../../helpers/reactUtilities";
 import { useControlledValue } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { SwitcherItemProps } from "./SwitcherItem";
 
 export type SwitcherProps = {

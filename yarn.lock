@@ -1549,12 +1549,49 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bricksandbraces/arcade-components@workspace:packages/arcade-components":
+"@bricksandbraces/arcade-components-storybook@workspace:packages/arcade-components-storybook":
+  version: 0.0.0-use.local
+  resolution: "@bricksandbraces/arcade-components-storybook@workspace:packages/arcade-components-storybook"
+  dependencies:
+    "@bricksandbraces/arcade-components": "workspace:^"
+    "@storybook/addon-a11y": "npm:^7.6.17"
+    "@storybook/addon-actions": "npm:^7.6.17"
+    "@storybook/addon-essentials": "npm:^7.6.17"
+    "@storybook/addon-interactions": "npm:^7.6.17"
+    "@storybook/addon-links": "npm:^7.6.17"
+    "@storybook/addon-onboarding": "npm:^1.0.11"
+    "@storybook/addon-styling": "npm:^1.3.7"
+    "@storybook/addon-styling-webpack": "npm:^0.0.6"
+    "@storybook/addon-viewport": "npm:^7.6.17"
+    "@storybook/addon-webpack5-compiler-babel": "npm:^2.0.0"
+    "@storybook/addons": "npm:^7.6.17"
+    "@storybook/api": "npm:^7.6.17"
+    "@storybook/blocks": "npm:^7.6.17"
+    "@storybook/components": "npm:^7.6.17"
+    "@storybook/core-events": "npm:^7.6.17"
+    "@storybook/csf": "npm:^0.1.2"
+    "@storybook/preview-api": "npm:^7.6.17"
+    "@storybook/preview-web": "npm:^7.6.17"
+    "@storybook/react": "npm:^7.6.17"
+    "@storybook/react-webpack5": "npm:^7.6.17"
+    "@storybook/test": "npm:^7.6.17"
+    "@storybook/theming": "npm:^7.6.17"
+    "@types/react": "npm:^18.2.65"
+    "@types/react-dom": "npm:^18.2.21"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    storybook: "npm:^7.6.17"
+    storybook-dark-mode: "npm:^3.0.3"
+  languageName: unknown
+  linkType: soft
+
+"@bricksandbraces/arcade-components@workspace:^, @bricksandbraces/arcade-components@workspace:packages/arcade-components":
   version: 0.0.0-use.local
   resolution: "@bricksandbraces/arcade-components@workspace:packages/arcade-components"
   dependencies:
     "@babel/core": "npm:^7.24.0"
-    "@bricksandbraces/arcade-tokens": "npm:^0.1.5"
+    "@bricksandbraces/arcade-tokens": "workspace:*"
+    "@openbricksandbraces/eloguent": "npm:^0.1.2"
     "@storybook/addon-a11y": "npm:^7.6.17"
     "@storybook/addon-actions": "npm:^7.6.17"
     "@storybook/addon-essentials": "npm:^7.6.17"
@@ -1632,6 +1669,28 @@ __metadata:
   resolution: "@bricksandbraces/arcade-designsystem@workspace:."
   dependencies:
     "@openbricksandbraces/eloguent": "npm:^0.1.2"
+    "@storybook/addon-a11y": "npm:^7.6.17"
+    "@storybook/addon-actions": "npm:^7.6.17"
+    "@storybook/addon-essentials": "npm:^7.6.17"
+    "@storybook/addon-interactions": "npm:^7.6.17"
+    "@storybook/addon-links": "npm:^7.6.17"
+    "@storybook/addon-onboarding": "npm:^1.0.11"
+    "@storybook/addon-styling": "npm:^1.3.7"
+    "@storybook/addon-styling-webpack": "npm:^0.0.6"
+    "@storybook/addon-viewport": "npm:^7.6.17"
+    "@storybook/addon-webpack5-compiler-babel": "npm:^2.0.0"
+    "@storybook/addons": "npm:^7.6.17"
+    "@storybook/api": "npm:^7.6.17"
+    "@storybook/blocks": "npm:^7.6.17"
+    "@storybook/components": "npm:^7.6.17"
+    "@storybook/core-events": "npm:^7.6.17"
+    "@storybook/csf": "npm:^0.1.2"
+    "@storybook/preview-api": "npm:^7.6.17"
+    "@storybook/preview-web": "npm:^7.6.17"
+    "@storybook/react": "npm:^7.6.17"
+    "@storybook/react-webpack5": "npm:^7.6.17"
+    "@storybook/test": "npm:^7.6.17"
+    "@storybook/theming": "npm:^7.6.17"
     eslint: "npm:^8.57.0"
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -1664,6 +1723,8 @@ __metadata:
     postcss-viewport-height-correction: "npm:^1.1.1"
     prettier: "npm:^3.2.5"
     rimraf: "npm:^5.0.5"
+    storybook: "npm:^7.6.17"
+    storybook-dark-mode: "npm:^3.0.3"
     stylelint: "npm:^16.2.1"
     stylelint-config-property-sort-order-smacss: "npm:^10.0.0"
     stylelint-config-standard: "npm:^36.0.0"
@@ -1674,7 +1735,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@bricksandbraces/arcade-tokens@npm:^0.1.5, @bricksandbraces/arcade-tokens@workspace:packages/arcade-tokens":
+"@bricksandbraces/arcade-tokens@workspace:*, @bricksandbraces/arcade-tokens@workspace:packages/arcade-tokens":
   version: 0.0.0-use.local
   resolution: "@bricksandbraces/arcade-tokens@workspace:packages/arcade-tokens"
   languageName: unknown

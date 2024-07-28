@@ -1,10 +1,10 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import type { TippyProps, UseSingletonProps } from "@tippyjs/react";
 import Tippy, { useSingleton } from "@tippyjs/react";
 import cx from "classnames";
 import React from "react";
 import { roundArrow } from "tippy.js";
 import { mapReactChildren } from "../../helpers/reactUtilities";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { IconOnlyButton, IconOnlyButtonProps } from "./IconOnlyButton";
 
 export type IconOnlyButtonGroupProps = {

@@ -1,7 +1,6 @@
+import { Accordion, AccordionItem } from "@bricksandbraces/arcade-components";
 import { Meta, StoryObj } from "@storybook/react";
 import React, { useState } from "react";
-import { Accordion } from "./Accordion";
-import { AccordionItem } from "./AccordionItem";
 
 export default {
   component: Accordion,

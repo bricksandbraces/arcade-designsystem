@@ -1,9 +1,9 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import { de } from "date-fns/locale";
 import React from "react";
 import { DayPicker } from "react-day-picker";
 import type { DayPickerProps } from "react-day-picker";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 export type DatePickerProps = {
   open?: boolean;

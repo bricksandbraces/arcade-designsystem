@@ -1,10 +1,10 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import Slider from "rc-slider";
 import React, { useEffect, useState } from "react";
 import { clamp } from "../../helpers/mathUtilities";
 import { parseToNumber } from "../../helpers/numberUtilities";
 import { useControlled } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { NumberInput } from "../NumberInput/NumberInput";
 import { Label } from "../Typography/Typography";
 

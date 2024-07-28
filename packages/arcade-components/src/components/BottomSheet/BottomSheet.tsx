@@ -1,3 +1,4 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconX } from "@tabler/icons-react";
 import cx from "classnames";
 import React, { useEffect, useRef, useState } from "react";
@@ -6,7 +7,6 @@ import FocusLock from "react-focus-lock";
 import { withoutPropagation } from "../../helpers/eventUtilities";
 import { setRef } from "../../helpers/refUtilities";
 import { useMounted } from "../../hooks/useMounted";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { IconOnlyButton } from "../Button/IconOnlyButton";
 import { OutsideClickListener } from "../util/OutsideClickListener/OutsideClickListener";
 

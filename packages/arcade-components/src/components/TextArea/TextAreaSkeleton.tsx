@@ -1,4 +1,4 @@
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import React from "react";
 import { SkeletonContainer, SkeletonText } from "../..";

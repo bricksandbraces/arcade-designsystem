@@ -1,3 +1,4 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import {
   IconAlertCircle,
   IconAlertTriangle,
@@ -10,7 +11,6 @@ import { mergeRefs } from "react-merge-refs";
 import { filterForKeys } from "../../helpers/keyboardUtilities";
 import { parseToNumber } from "../../helpers/numberUtilities";
 import { useControlledInput } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { IconOnlyButton } from "../Button/IconOnlyButton";
 import { IconOnlyButtonGroup } from "../Button/IconOnlyButtonGroup";
 import { Label } from "../Typography/Typography";

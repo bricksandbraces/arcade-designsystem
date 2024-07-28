@@ -1,6 +1,6 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import React from "react";
 import { Checkbox, TableHeadCell } from "../..";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { RowEntry } from "./DataTable";
 
 export type TableSelectionHeadCellProps = {

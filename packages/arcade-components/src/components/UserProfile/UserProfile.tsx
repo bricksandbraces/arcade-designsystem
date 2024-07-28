@@ -1,8 +1,8 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import Tippy from "@tippyjs/react";
 import cx from "classnames";
 import React, { useState } from "react";
 import { idfy } from "../../helpers/arrayUtilities";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { Avatar } from "../Avatar/Avatar";
 import { Button } from "../Button/Button";
 import { Divider } from "../Divider/Divider";

@@ -1,8 +1,8 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconCheck, IconCopy } from "@tabler/icons-react";
 import cx from "classnames";
 import React, { useState } from "react";
 import { useCopyToClipboard } from "react-use";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { IconOnlyButton } from "../Button/IconOnlyButton";
 
 export type CopyButtonProps = {

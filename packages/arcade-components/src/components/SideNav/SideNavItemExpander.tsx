@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconChevronDown } from "@tabler/icons-react";
 import cx from "classnames";
 import React, { useState } from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 export type SideNavItemExpanderProps = {
   /**

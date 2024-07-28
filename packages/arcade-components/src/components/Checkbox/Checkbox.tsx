@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import React, { useEffect, useRef } from "react";
 import { mergeRefs } from "react-merge-refs";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 export type CheckboxProps = {
   /**

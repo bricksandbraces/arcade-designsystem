@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconArrowRight } from "@tabler/icons-react";
 import cx from "classnames";
 import React from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { SkeletonText } from "../Skeleton/SkeletonText";
 
 export type BreadcrumbSkeletonProps = {

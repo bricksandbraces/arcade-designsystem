@@ -1,6 +1,6 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import React, { forwardRef } from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { LottieAnimation } from "../LottieAnimation/LottieAnimation";
 import defaultLoadingAnimation from "./animation.json";
 

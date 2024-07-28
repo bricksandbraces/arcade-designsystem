@@ -1,3 +1,4 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconCalendar } from "@tabler/icons-react";
 import cx from "classnames";
 import React, { forwardRef, memo } from "react";
@@ -6,7 +7,6 @@ import { formatDate, parseDate } from "../../helpers/dateUtilities";
 import { withoutPropagation } from "../../helpers/eventUtilities";
 import { filterForKeys } from "../../helpers/keyboardUtilities";
 import { useControlled, useControlledInput } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { TextInput, TextInputProps } from "../TextInput/TextInput";
 
 export type DateInputProps = {

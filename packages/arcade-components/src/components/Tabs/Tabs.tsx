@@ -1,9 +1,9 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import React from "react";
 import { createPortal } from "react-dom";
 import { mapReactChildren } from "../../helpers/reactUtilities";
 import { useControlledValue } from "../../hooks/useControlled";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { Body } from "../Typography/Typography";
 import { TabProps } from "./Tab";
 

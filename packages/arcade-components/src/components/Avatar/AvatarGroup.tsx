@@ -1,7 +1,7 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconPlus, IconUsers } from "@tabler/icons-react";
 import cx from "classnames";
 import React, { ReactNode } from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { Button } from "../Button/Button";
 import { IconOnlyButton } from "../Button/IconOnlyButton";
 

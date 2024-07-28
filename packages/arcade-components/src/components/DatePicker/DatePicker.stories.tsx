@@ -1,9 +1,9 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { action } from "@storybook/addon-actions";
 import { format } from "date-fns";
 import React, { useRef, useState } from "react";
 import { Button, OutsideClickListener } from "../..";
 import { formatDate } from "../../helpers/dateUtilities";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 import { Label } from "../Typography/Typography";
 import { DateInput } from "./DateInput";

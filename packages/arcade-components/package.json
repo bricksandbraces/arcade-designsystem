@@ -1,6 +1,6 @@
 {
   "name": "@bricksandbraces/arcade-components",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "The design system of the Bricks & Braces brand.",
   "repository": {
     "type": "git",
@@ -8,34 +8,30 @@
     "directory": "packages/arcade-components"
   },
   "scripts": {
-    "generate-barrels": "barrelsby -D --exclude \".*.stories.tsx\" -d ./src --include \"src/components/.*\"",
-    "storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build",
-    "start:storybook": "http-server -s -p 6006 ./storybook-static",
-    "build:local": "yarn build:package && yalc publish",
-    "build:package": "rimraf lib/ && yarn build:esm && yarn build:cjs && yarn build:css",
-    "build:css-clean": "rimraf lib/styles && yarn build:css",
-    "build:css": "postcss src/styles/index.css --ext .css --dir lib/styles/dist/ && cp -R src/styles/ lib/styles/postcss",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir lib/cjs ",
-    "test": "jest --passWithNoTests",
-    "format:fix": "DEBUG=eslint:cli-engine eslint --fix --cache --cache-strategy content . && prettier --write . && stylelint \"**/*.?(p)css\" --fix --formatter verbose",
-    "format:fix-complete": "DEBUG=eslint:cli-engine eslint --fix . && prettier --write . && stylelint \"**/*.?(p)css\" --fix --formatter verbose",
-    "format:styles": "stylelint \"**/*.?(p)css\" --fix --formatter verbose",
-    "format:check": "DEBUG=eslint:cli-engine eslint --cache --cache-strategy content . && prettier --check . && stylelint \"**/*.?(p)css\" --formatter verbose",
-    "publish:bb": "yarn npm publish --tag latest",
-    "publish:patch": "yarn version patch && git checkout main && git add . && git commit -m 'Automatic release' && git push && yarn build:package && yarn publish:bb",
-    "publish:minor": "yarn version minor && git checkout main && git add . && git commit -m 'Automatic release' && git push && yarn build:package && yarn publish:bb",
-    "publish:major": "yarn version major && git checkout main && git add . && git commit -m 'Automatic release' && git push && yarn build:package && yarn publish:bb",
-    "build-storybook": "storybook build"
+    "components:generate-barrels": "barrelsby -D -d ./src --include \"src/components/.*\"",
+    "components:build:local": "yarn components:build:package && yalc publish",
+    "components:build:css-clean": "rimraf lib/styles && yarn components:build:css",
+    "components:build:css": "postcss src/styles/index.css --ext .css --dir lib/styles/dist/ && cp -R src/styles/ lib/styles/postcss",
+    "components:build:esm": "tsc --project tsconfig.esm.json",
+    "components:build:cjs": "tsc --project tsconfig.cjs.json",
+    "components:build:package": "rimraf lib/ && yarn components:build:esm && yarn components:build:cjs && yarn components:build:css",
+    "components:test": "jest --passWithNoTests",
+    "components:format:fix": "DEBUG=eslint:cli-engine eslint --fix --cache --cache-strategy content . && prettier --write . && stylelint \"**/*.?(p)css\" --fix --formatter verbose",
+    "components:format:fix-complete": "DEBUG=eslint:cli-engine eslint --fix . && prettier --write . && stylelint \"**/*.?(p)css\" --fix --formatter verbose",
+    "components:format:styles": "stylelint \"**/*.?(p)css\" --fix --formatter verbose",
+    "components:format:check": "DEBUG=eslint:cli-engine eslint --cache --cache-strategy content . && prettier --check . && stylelint \"**/*.?(p)css\" --formatter verbose",
+    "components:publish:bb": "yarn npm publish --tag latest",
+    "components:publish:patch": "yarn version patch && git checkout main && git add . && git commit -m 'Automatic release' && git push && yarn build:package && yarn publish:bb",
+    "components:publish:minor": "yarn version minor && git checkout main && git add . && git commit -m 'Automatic release' && git push && yarn build:package && yarn publish:bb",
+    "components:publish:major": "yarn version major && git checkout main && git add . && git commit -m 'Automatic release' && git push && yarn build:package && yarn publish:bb"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "browserslist": "last 2 versions",
-  "main": "./lib/cjs/src/index.js",
-  "module": "./lib/esm/src/index.js",
-  "types": "./lib/esm/src/index.d.ts",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
   "files": [
     "lib"
   ],
@@ -44,7 +40,8 @@
     "react-dom": "^18.X"
   },
   "dependencies": {
-    "@bricksandbraces/arcade-tokens": "^0.1.5",
+    "@bricksandbraces/arcade-tokens": "workspace:*",
+    "@openbricksandbraces/eloguent": "^0.1.2",
     "@storybook/addon-a11y": "^7.6.17",
     "@storybook/addon-actions": "^7.6.17",
     "@storybook/addon-essentials": "^7.6.17",

@@ -1,0 +1,12 @@
+{
+  "rootDir": "src",
+  "extends": "../../tsconfig.json",
+  "include": ["./**/*.ts", "./**/*.tsx"],
+  "exclude": ["dist", "tasks"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "incremental": true,
+    "noEmit": false,
+    "declaration": true
+  }
+}

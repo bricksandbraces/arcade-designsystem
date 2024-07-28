@@ -1,8 +1,8 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconChevronDown } from "@tabler/icons-react";
 import cx from "classnames";
 import React from "react";
 import { SkeletonText } from "../..";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { SkeletonAnimatedContainer } from "../Skeleton/SkeletonAnimatedContainer";
 
 export type SelectSkeletonProps = {

@@ -1,6 +1,6 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import cx from "classnames";
 import React, { ReactNode } from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 
 export type LinkProps = {
   /**
@@ -49,18 +49,21 @@ export type LinkProps = {
   onClick?: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
 };
 
-export const Link = function Link({
-  children,
-  href,
-  target,
-  inline,
-  size = "default",
-  icon,
-  iconPosition = "end",
-  onClick,
-  className,
-  ...rest
-}: LinkProps) {
+export const Link = React.forwardRef(function Link(
+  {
+    children,
+    href,
+    target,
+    inline,
+    size = "default",
+    icon,
+    iconPosition = "end",
+    onClick,
+    className,
+    ...rest
+  }: LinkProps,
+  ref: React.ForwardedRef<HTMLAnchorElement | HTMLButtonElement>
+) {
   const Element = React.createElement(href ? "a" : "button").type;
 
   return (
@@ -74,6 +77,7 @@ export const Link = function Link({
         className
       )}
       {...rest}
+      {...({ ref } as any)} // Fix for too complex union type
       href={href}
       target={target}
       onClick={onClick as React.MouseEventHandler<HTMLElement>}
@@ -82,4 +86,4 @@ export const Link = function Link({
       {!inline && icon}
     </Element>
   );
-};
+});

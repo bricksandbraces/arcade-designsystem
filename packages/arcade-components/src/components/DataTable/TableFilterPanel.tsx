@@ -1,8 +1,8 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import { IconX } from "@tabler/icons-react";
 import cx from "classnames";
 import React from "react";
 import { Headline } from "../..";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { IconOnlyButton } from "../Button/IconOnlyButton";
 
 export type TableToolbarFilterPanelProps = {

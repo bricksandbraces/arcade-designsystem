@@ -1,5 +1,5 @@
+import { prefix } from "@bricksandbraces/arcade-tokens/dist/settings";
 import React from "react";
-import { prefix } from "@bricksandbraces/arcade-tokens/settings";
 import { Column, Grid } from "./Grid";
 
 export default { title: "Layout/Grid", component: Grid };

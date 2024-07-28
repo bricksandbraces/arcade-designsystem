@@ -1,0 +1,51 @@
+{
+  "name": "@bricksandbraces/arcade-components-storybook",
+  "version": "0.0.1",
+  "description": "Awesome storybook for the Bricks & Braces brand.",
+  "author": "Hendrik Ulbrich <hendrik@bricksandbraces.com>",
+  "homepage": "https://github.com/bricksandbraces/designsystem#readme",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bricksandbraces/designsystem.git"
+  },
+  "scripts": {
+    "storybook:dev": "storybook dev -p 6006",
+    "storybook:start": "http-server -s -p 6006 ./storybook-static",
+    "storybook:build": "storybook build",
+    "storybook:tsc": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/addon-styling-webpack": "^0.0.6",
+    "@storybook/addon-webpack5-compiler-babel": "^2.0.0",
+    "@storybook/blocks": "^7.6.17",
+    "@storybook/react-webpack5": "^7.6.17",
+    "@storybook/test": "^7.6.17",
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "^18.2.21"
+  },
+  "dependencies": {
+    "@bricksandbraces/arcade-components": "workspace:^",
+    "@storybook/addon-a11y": "^7.6.17",
+    "@storybook/addon-actions": "^7.6.17",
+    "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-links": "^7.6.17",
+    "@storybook/addon-styling": "^1.3.7",
+    "@storybook/addon-viewport": "^7.6.17",
+    "@storybook/addons": "^7.6.17",
+    "@storybook/api": "^7.6.17",
+    "@storybook/components": "^7.6.17",
+    "@storybook/core-events": "^7.6.17",
+    "@storybook/csf": "^0.1.2",
+    "@storybook/preview-api": "^7.6.17",
+    "@storybook/preview-web": "^7.6.17",
+    "@storybook/react": "^7.6.17",
+    "@storybook/theming": "^7.6.17",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.17",
+    "storybook-dark-mode": "^3.0.3"
+  }
+}
