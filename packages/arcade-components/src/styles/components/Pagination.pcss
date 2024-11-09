@@ -1,0 +1,72 @@
+.$(prefix) {
+  &--pagination {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: var(--size-spacing-inner);
+
+    &-list {
+      display: inline-flex;
+      list-style: none;
+      gap: var(--size-spacing-inner);
+
+      &__item {
+        & > .$(prefix)--button {
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: calc(var(--size-container-01) / 4);
+            transition:
+              width var(--transition-app-01),
+              opacity var(--transition-app-01);
+            border-radius: calc(var(--component-radius-01) * 2);
+            opacity: 0;
+            background-color: var(--color-brand-04);
+          }
+        }
+        &-active > .$(prefix)--button {
+          position: relative;
+          background-color: var(--color-selected);
+
+          &::before {
+            width: var(--size-container-02);
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    & > ul > li > .$(prefix)--button {
+      padding: 0;
+    }
+
+    &-default {
+      & > ul > li > .$(prefix)--button {
+        min-width: var(--size-field-default);
+        max-width: var(--size-field-default);
+        min-height: var(--size-field-default);
+        max-height: var(--size-field-default);
+      }
+    }
+
+    &-small {
+      & > ul > li > .$(prefix)--button {
+        min-width: var(--size-field-small);
+        max-width: var(--size-field-small);
+        min-height: var(--size-field-small);
+        max-height: var(--size-field-small);
+      }
+    }
+
+    &-large {
+      & > ul > li > .$(prefix)--button {
+        min-width: var(--size-field-large);
+        max-width: var(--size-field-large);
+        min-height: var(--size-field-large);
+        max-height: var(--size-field-large);
+      }
+    }
+  }
+}

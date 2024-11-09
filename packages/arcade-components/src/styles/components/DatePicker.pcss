@@ -1,0 +1,61 @@
+@import url("react-day-picker/dist/style.css");
+
+.$(prefix) {
+  &--datepicker {
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    width: var(--size-container-08);
+    margin: 0;
+    transform: translateY(var(--size-spacing-03));
+    transition:
+      opacity var(--transition-app-01),
+      transform var(--transition-app-01),
+      visibility var(--transition-app-01);
+    border: var(--size-border) var(--style-border) var(--color-border);
+    border-radius: var(--component-radius-02);
+    background: var(--color-background);
+    box-shadow: var(--component-shadow-02);
+
+    &-hidden {
+      visibility: hidden;
+      transform: translateY(var(--size-spacing-02));
+      opacity: 0;
+    }
+
+    &-container {
+      display: inline-flex;
+      position: relative;
+    }
+  }
+
+  &--datepicker.$(prefix)--skeleton {
+    display: inline-flex;
+    position: unset;
+    flex-flow: column;
+    align-items: flex-start;
+    overflow: unset;
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: none;
+
+    & > .$(prefix)--skeleton-animated {
+      justify-content: flex-end;
+      padding: 0 var(--size-spacing-05);
+      border-radius: var(--component-radius-02);
+
+      & > svg {
+        transform: translateX(-0.0625rem);
+        stroke: var(--color-skeleton-03);
+      }
+    }
+  }
+}
+
+.rdp-months {
+  /* todo */
+}
+
+.rdp-caption {
+  /* todo */
+}

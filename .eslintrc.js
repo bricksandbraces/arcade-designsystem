@@ -8,18 +8,10 @@ module.exports = {
     __CONFIG__: true,
     __ENV__: true
   },
-  plugins: [
-    "@typescript-eslint",
-    "import",
-    "react",
-    "jsx-a11y",
-    "storybook",
-    "cypress"
-  ],
+  plugins: ["@typescript-eslint", "import", "react", "jsx-a11y", "storybook"],
   extends: [
-    "airbnb-typescript",
     "plugin:import/recommended",
-    "plugin:cypress/recommended",
+    "airbnb-typescript",
     "plugin:jsx-a11y/recommended",
     "plugin:storybook/recommended",
     "plugin:react/recommended",
@@ -46,6 +38,7 @@ module.exports = {
         }
       }
     ],
+    "@typescript-eslint/naming-convention": "off",
     "import/prefer-default-export": "off",
     "import/no-cycle": "off",
     "arrow-body-style": "off",

@@ -1,0 +1,38 @@
+{
+  "name": "@bricksandbraces/arcade-tokens",
+  "version": "0.2.0",
+  "description": "Awesome design tokens for the Bricks & Braces brand.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bricksandbraces/designsystem.git",
+    "directory": "packages/arcade-tokens"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "tokens:format:fix": "DEBUG=eslint:cli-engine eslint --fix --cache --cache-strategy content . && prettier --write . && rimraf node_modules",
+    "tokens:format:check": "DEBUG=eslint:cli-engine eslint --cache --cache-strategy content . && prettier --check .",
+    "tokens:build": "yarn tokens:clean && tsc --build --verbose && cp -R pcss/ dist/ && echo 'Build complete!'",
+    "tokens:clean": "rimraf dist",
+    "tokens:generate-from-figma": "ts-node -P 'tsconfig.tasks.json' './tasks/generate-from-figma/generate-from-figma.ts' && yarn tokens:format:fix",
+    "tokens:run-update": "yarn tokens:generate-from-figma && yarn tokens:build && echo 'Update complete!'"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "browserslist": "last 2 versions",
+  "engines": {
+    "node": ">=20.X"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "moin@bricksandbraces.com",
+  "license": "UNLICENSED",
+  "packageManager": "yarn@4.3.0",
+  "devDependencies": {
+    "@types/color": "^3.0.6",
+    "color": "^4.2.3"
+  }
+}

@@ -1,0 +1,170 @@
+.$(prefix) {
+  &--codesnippet {
+    &-container {
+      display: flex;
+      position: relative;
+      align-items: center;
+      max-width: min(calc(var(--size-container-08) * 3), 100%);
+      min-height: var(--size-container-03);
+      max-height: var(--size-container-03);
+      border: var(--size-border) var(--style-border) var(--color-border);
+      border-radius: var(--component-radius-03);
+      background-color: #fff;
+      box-shadow: var(--component-shadow-01);
+    }
+
+    &-pre {
+      display: flex;
+      align-items: center;
+      width: calc(100% - 27px);
+      height: 100%;
+      min-height: calc(var(--size-container-03) + 8px);
+      margin-left: -5px;
+      padding-right: 6px;
+      padding-left: var(--size-spacing-05);
+      border-radius: 12px 0 0 12px;
+
+      &:focus-visible {
+        outline: none;
+        box-shadow:
+          inset 0 0 0 0.1875rem var(--color-focus-highlight),
+          inset 0 0 0 0.1875rem var(--color-background),
+          inset 0 0 0 0.25rem var(--color-focus);
+      }
+
+      @mixin code;
+    }
+
+    &-code {
+      max-width: 100%;
+      overflow-x: scroll;
+
+      @mixin code;
+    }
+
+    &-rightgradient {
+      position: absolute;
+      right: 36px;
+      width: 32px;
+      min-height: calc(var(--size-container-03) - 2px);
+      transform: scaleX(-1);
+      background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &-copybutton {
+      position: absolute;
+      top: auto;
+      right: 0;
+      bottom: auto;
+      margin-right: -1px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    &-multi {
+      &.$(prefix)--codesnippet-container {
+        align-items: flex-start;
+        width: 40rem;
+        min-width: calc(var(--size-container-03) * 2);
+        max-width: min(40rem, 100%);
+        min-height: calc(var(--size-container-03) * 3);
+        max-height: var(--size-container-08);
+        overflow: hidden;
+
+        &-expanded {
+          max-height: fit-content;
+          overflow-y: scroll;
+          & .$(prefix)--codesnippet-pre {
+            max-height: fit-content;
+            padding-bottom: 32px;
+          }
+        }
+      }
+
+      & .$(prefix)--codesnippet-copybutton {
+        top: 12px;
+        right: 12px;
+        border-radius: 8px;
+      }
+
+      & .$(prefix)--codesnippet-rightgradient {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 132px;
+      }
+
+      & .$(prefix)--codesnippet-multilinecode {
+        max-width: 100%;
+        overflow-x: scroll;
+      }
+
+      & .$(prefix)--codesnippet-pre {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 100%;
+        max-width: 100%;
+        max-height: var(--size-container-08);
+        margin-left: 0;
+        padding-top: 12px;
+        padding-right: 0;
+        border-radius: 12px;
+      }
+
+      & .$(prefix)--codesnippet-line {
+        display: flex;
+        width: fit-content;
+        padding-left: 36px;
+        overflow-x: visible;
+        gap: 32px;
+      }
+
+      & .$(prefix)--codesnippet-linenum {
+        position: absolute;
+        left: 16px;
+        padding-right: 16px;
+        background-color: #fff;
+        color: var(--color-font-placeholder);
+      }
+
+      & .$(prefix)--codesnippet-showmore {
+        display: flex;
+        position: sticky;
+        right: 0;
+        align-items: flex-end;
+        justify-content: flex-end;
+        min-width: 100%;
+        height: 3rem;
+        margin-top: auto;
+
+        /* todo: replace with cross-browser-gradient  */
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(100%, #fff),
+          color-stop(0%, rgba(255, 255, 255, 0))
+        );
+      }
+    }
+
+    &--codesnippet.$(prefix)--skeleton {
+      &.$(prefix)--codesnippet-single {
+        display: flex;
+        align-items: center;
+        min-height: var(--size-container-03);
+        max-height: var(--size-container-03);
+
+        & > div {
+          display: inline-flex;
+        }
+      }
+
+      position: relative;
+      align-items: flex-start;
+      max-width: calc(var(--size-spacing-13) * 3);
+      height: var(--size-container-08);
+      padding: var(--size-spacing-05);
+    }
+  }
+}

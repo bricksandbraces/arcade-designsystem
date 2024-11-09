@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "wix.vscode-import-cost",
+    "firsttris.vscode-jest-runner",
+    "romanresh.testcafe-test-runner",
+    "pomdtr.excalidraw-editor"
+  ]
+}

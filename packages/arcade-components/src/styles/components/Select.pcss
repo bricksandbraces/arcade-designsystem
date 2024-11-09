@@ -1,0 +1,170 @@
+.$(prefix) {
+  &--select {
+    display: inline-flex;
+    flex-flow: column;
+    width: 100%;
+    max-width: var(--size-container-08);
+
+    &-light {
+      & > .$(prefix)--select-input__wrapper > .$(prefix)--select-input {
+        border-color: var(--color-border-light);
+        background-color: var(--color-background-light);
+
+        &[disabled] {
+          border-color: var(--color-disabled);
+        }
+
+        &[readonly] {
+          border-color: var(--color-readonly);
+        }
+      }
+    }
+
+    &-default {
+      height: var(--size-field-default);
+    }
+
+    &-large {
+      height: var(--size-field-large);
+    }
+
+    &-small {
+      height: var(--size-field-small);
+    }
+
+    &-input {
+      &__wrapper {
+        display: inline-flex;
+        position: relative;
+        align-items: center;
+      }
+
+      &__icon {
+        position: absolute;
+        right: var(--size-spacing-05);
+        color: var(--color-font-text-01);
+        pointer-events: none;
+      }
+
+      @mixin type--body-02;
+
+      display: inline-flex;
+      position: relative;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 var(--size-spacing-09) 0 var(--size-spacing-05);
+      overflow: hidden;
+      transition:
+        box-shadow var(--transition-app-01),
+        background-color var(--transition-app-01);
+      border: var(--size-border) var(--style-border) var(--color-border);
+      border-radius: var(--component-radius-02);
+      outline: 0;
+      background-color: var(--color-background);
+      box-shadow: var(--component-shadow-01);
+      color: var(--color-font-text-01);
+      white-space: nowrap;
+      cursor: pointer;
+      appearance: none;
+
+      &:hover {
+        background-color: var(--color-hover);
+      }
+
+      &:active {
+        background-color: var(--color-active);
+      }
+
+      &:focus {
+        outline: 0;
+        box-shadow:
+          0 0 0 0.0625rem var(--color-focus),
+          0 0 0 0.25rem var(--color-focus-highlight);
+      }
+
+      &:disabled {
+        & + .$(prefix)--select-input__icon {
+          color: var(--color-font-disabled);
+          pointer-events: none;
+        }
+
+        border-color: transparent;
+        background-color: var(--color-disabled);
+        color: var(--color-font-disabled);
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: var(--color-disabled);
+        }
+
+        &:active {
+          background-color: var(--color-disabled);
+        }
+      }
+    }
+
+    &-readonly {
+      & > div > .$(prefix)--select-input {
+        &:disabled {
+          & + .$(prefix)--select-input__icon {
+            color: var(--color-font-readonly);
+            pointer-events: none;
+          }
+
+          border-color: transparent;
+          background-color: var(--color-readonly);
+          color: var(--color-font-readonly);
+
+          &:hover {
+            background-color: var(--color-readonly);
+          }
+
+          &:active {
+            background-color: var(--color-readonly);
+          }
+        }
+      }
+    }
+
+    &-error {
+      & > .$(prefix)--dropdown-toggle {
+        outline: var(--size-border-state) var(--style-border-focus)
+          var(--color-danger);
+        outline-offset: calc(var(--size-border-focus) * -1);
+      }
+
+      &__text {
+        @mixin type--label;
+
+        display: flex;
+        align-items: center;
+        margin-top: var(--size-spacing-03);
+        color: var(--color-font-danger);
+
+        & > svg {
+          margin-right: var(--size-spacing-02);
+        }
+      }
+    }
+
+    &-warning {
+      outline: var(--size-border-state) var(--style-border-focus)
+        var(--color-warning);
+      outline-offset: calc(var(--size-border-focus) * -1);
+
+      &__text {
+        @mixin type--label;
+
+        display: flex;
+        align-items: center;
+        margin-top: var(--size-spacing-03);
+        color: var(--color-font-warning);
+
+        & > svg {
+          margin-right: var(--size-spacing-02);
+        }
+      }
+    }
+  }
+}

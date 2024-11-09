@@ -1,0 +1,108 @@
+.$(prefix) {
+  &--userprofile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    &-trigger {
+      transition:
+        box-shadow var(--transition-app-01),
+        filter var(--transition-app-01);
+      border-radius: 50%;
+      outline: 0;
+      background-color: transparent;
+
+      &:hover {
+        filter: brightness(0.95);
+      }
+
+      &:active {
+        filter: brightness(0.9);
+      }
+
+      &:focus {
+        outline: 0;
+        box-shadow:
+          0 0 0 0.0625rem var(--color-focus),
+          0 0 0 0.25rem var(--color-focus-highlight);
+      }
+    }
+
+    &-open {
+      filter: brightness(0.9);
+
+      &:hover {
+        filter: brightness(0.85);
+      }
+    }
+
+    &-link {
+      margin: 0 0 var(--size-spacing-02) 0;
+      padding: 0;
+    }
+
+    &-linklist {
+      margin: var(--size-spacing-04) 0 0 0;
+      padding: 0;
+    }
+
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-menu.tippy-box {
+      position: absolute;
+      width: var(--size-container-08);
+      padding: var(--size-spacing-05);
+      transition:
+        transform var(--transition-app-01),
+        opacity var(--transition-app-01),
+        visibility var(--transition-app-01) !important;
+      border: var(--size-border) var(--style-border) var(--color-border);
+      background-color: var(--color-background);
+      box-shadow: var(--component-shadow-02);
+
+      & > .tippy-content {
+        padding: 0;
+
+        & > div > .$(prefix)--userprofile-menu__user {
+          display: flex;
+          flex-flow: row;
+
+          & > div > .$(prefix)--userprofile-name {
+            margin-bottom: var(--size-spacing-01);
+            padding: 0;
+            color: var(--color-font-text-01);
+          }
+
+          & > .$(prefix)--userprofile-menu__avatar {
+            display: inline-flex;
+            margin-right: var(--size-spacing-05);
+            padding: 0;
+          }
+        }
+      }
+
+      &[data-animation="bbds-animation"][data-state="hidden"] {
+        visibility: hidden;
+        transform: translateY(calc(var(--size-spacing-inner) * -1));
+        opacity: 0;
+      }
+    }
+
+    &-divider.$(prefix)--divider {
+      width: calc(100% + var(--size-spacing-07));
+      margin: var(--size-spacing-05) 0;
+      transform: translate(calc(var(--size-spacing-05) * -1), 0);
+      color: inherit;
+    }
+
+    &-subname {
+      margin: 0;
+      padding: 0;
+      color: var(--color-font-text-05);
+    }
+  }
+}

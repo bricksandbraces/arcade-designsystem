@@ -1,0 +1,48 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+
+normalize.css
+
+# config
+*.config.js
+*.config.cjs
+config/
+
+/node_modules
+/resources
+/public
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# lib
+lib/
+bin/
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+storybook-static
+
+# yarn
+/.yarn
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

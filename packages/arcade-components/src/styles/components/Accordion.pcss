@@ -1,0 +1,151 @@
+.$(prefix) {
+  &--accordion {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-width: calc(var(--container-xlg) * 8);
+    margin: 0;
+    padding: var(--size-spacing-inner);
+    list-style-type: none;
+    border: var(--size-border) var(--style-border) var(--color-border);
+    border-radius: var(--component-radius-02);
+    background-color: var(--color-background);
+    box-shadow: var(--component-shadow-01);
+    gap: var(--size-spacing-inner);
+
+    &-small > li,
+    &-small > li > button,
+    &-small > .$(prefix)--skeleton {
+      min-height: var(--container-sm);
+      max-height: var(--container-sm);
+    }
+
+    &-default > li,
+    &-default > li > button,
+    &-default > .$(prefix)--skeleton {
+      min-height: var(--container-md);
+      max-height: var(--container-md);
+    }
+
+    &-large > li,
+    &-large > li > button,
+    &-large > .$(prefix)--skeleton {
+      min-height: var(--size-field-large);
+      max-height: var(--size-field-large);
+    }
+
+    & > li {
+      box-sizing: content-box;
+      height: 100%;
+      max-height: var(--size-field-default);
+      overflow: hidden;
+      transition:
+        max-height var(--transition-app-01),
+        box-shadow var(--transition-app-01);
+      border: var(--size-border) var(--style-border) transparent;
+      border-radius: var(--component-radius-02);
+      background-color: var(--color-background);
+      box-shadow: 0 0 0 0;
+
+      &:focus-within {
+        z-index: 10;
+        outline: 1px solid var(--color-border-focus-03);
+        outline-offset: -1px;
+        box-shadow:
+          0 0 0 6px var(--color-border-focus-01),
+          0 0 0 3px var(--color-border-focus-02);
+      }
+
+      &-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding: 0 var(--size-spacing-04);
+        transition:
+          background-color var(--transition-app-01),
+          border-color var(--transition-app-01);
+        border: var(--size-border) var(--style-border) transparent;
+        border-radius: var(--component-radius-02);
+        outline: 0;
+        background-color: transparent;
+        color: var(--color-font-text-01);
+
+        &:hover {
+          background-color: var(--color-hover);
+        }
+
+        &:active {
+          background-color: var(--color-active);
+        }
+
+        &:focus-visible {
+          outline: 0;
+        }
+
+        &:disabled {
+          background-color: transparent;
+          color: var(--color-font-disabled);
+          cursor: not-allowed;
+        }
+
+        &--headline {
+          @mixin type--body-02;
+
+          margin: 0;
+        }
+
+        &--icon {
+          transition: transform var(--transition-app-01);
+        }
+      }
+
+      &-content {
+        @mixin type--body-02;
+
+        display: block;
+        width: 80%;
+        height: 100%;
+        margin: 0;
+        padding: var(--size-spacing-04) var(--size-spacing-04)
+          var(--size-spacing-04) var(--size-spacing-04);
+        color: var(--color-font-text-02);
+      }
+
+      &-open {
+        &
+          > .$(prefix)--accordion-list__item-title
+          > .$(prefix)--accordion-list__item-title--icon {
+          transform: rotate(180deg);
+        }
+
+        & > .$(prefix)--accordion-list__item-content {
+          display: block;
+        }
+      }
+
+      &-open.$(prefix)--accordion-list__item {
+        max-height: inherit;
+      }
+    }
+  }
+  &--accordion.$(prefix)--skeleton {
+    padding: var(--size-spacing-inner);
+    gap: var(--size-spacing-inner);
+    border: var(--size-border) var(--style-border) transparent;
+
+    & > .$(prefix)--accordion-list__item-title {
+      justify-content: space-between;
+
+      & > svg {
+        min-width: var(--size-container-01);
+        max-width: var(--size-container-01);
+        min-height: var(--size-container-01);
+        max-height: var(--size-container-01);
+        transform: translateX(-0.0625rem);
+        stroke: var(--color-skeleton-02);
+      }
+    }
+  }
+}
