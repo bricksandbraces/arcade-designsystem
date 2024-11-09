@@ -8,7 +8,7 @@ export type PrimitivesValues = {
     /** @example "color/blue/10" */
     name: string;
     /** @example "8px" */
-    color: string;
+    value: string;
     var: never;
     rootAlias: never;
   }[];
@@ -40,7 +40,7 @@ export type ColorValues = {
     /** @example "color/background" */
     name: string;
     /** @example "rgb(1,1,1)"" */
-    color: string;
+    value: string;
     /** @example "color/neutral/white" */
     var: string;
     /** @example "color/neutral/white" */

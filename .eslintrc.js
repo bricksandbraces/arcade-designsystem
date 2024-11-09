@@ -38,6 +38,7 @@ module.exports = {
         }
       }
     ],
+    "@typescript-eslint/naming-convention": "off",
     "import/prefer-default-export": "off",
     "import/no-cycle": "off",
     "arrow-body-style": "off",

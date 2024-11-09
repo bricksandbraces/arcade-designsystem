@@ -1738,6 +1738,9 @@ __metadata:
 "@bricksandbraces/arcade-tokens@workspace:*, @bricksandbraces/arcade-tokens@workspace:packages/arcade-tokens":
   version: 0.0.0-use.local
   resolution: "@bricksandbraces/arcade-tokens@workspace:packages/arcade-tokens"
+  dependencies:
+    "@types/color": "npm:^3.0.6"
+    color: "npm:^4.2.3"
   languageName: unknown
   linkType: soft
 

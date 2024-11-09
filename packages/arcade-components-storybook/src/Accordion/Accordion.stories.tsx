@@ -21,7 +21,6 @@ export default {
     }
   },
   args: {
-    light: false,
     size: "default"
   }
 } as Meta;

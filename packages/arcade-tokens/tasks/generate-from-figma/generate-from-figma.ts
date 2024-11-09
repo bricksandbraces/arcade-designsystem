@@ -1,4 +1,5 @@
 import fs from "fs";
+import Color from "color";
 import {
   BorderValues,
   BreakpointValues,
@@ -26,14 +27,15 @@ function figmaVarToJSVar(varName: string) {
 function generatePrimitives(values: PrimitivesValues) {
   let primitiveOutput = `${DISCLAIMER}export default {\n`;
   values[0].color.forEach((color) => {
-    if (color.color.includes("/")) {
-      // convert rgb(255, 255, 255 / 0.95) into rgba(255, 255, 255, 0.95)
-      const split = color.color.split("/");
-      const rgb = (split[0].trim() + ",").replace("rgb", "rgba");
+    if (color.value.includes("/")) {
+      // convert rgb(255 255 255 / 0.95) into rgba(255, 255, 255, 0.95)
+      console.log(color.value);
+      const split = color.value.split("/");
+      const rgb = split[0].split(" ").join(", ").replace("rgb", "rgba");
       const alpha = split[1].trim().substring(0, split[1].length - 1);
-      primitiveOutput += `  "${figmaVarToJSVar(color.name)}": "${rgb} ${alpha}",\n`;
+      primitiveOutput += `  "${figmaVarToJSVar(color.name)}": "${rgb}${alpha}",\n`;
     } else {
-      primitiveOutput += `  "${figmaVarToJSVar(color.name)}": "${color.color}",\n`;
+      primitiveOutput += `  "${figmaVarToJSVar(color.name)}": "${Color(color.value)}",\n`;
     }
   });
   primitiveOutput += "};\n";
